@@ -1,4 +1,4 @@
-package com.ideashare;
+package com.ideashare.app;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
