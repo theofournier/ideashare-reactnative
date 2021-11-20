@@ -12,7 +12,8 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": false,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "typeRoots": ["./src/types", "./node_modules/@types"],
   },
   "exclude": [
     "node_modules",
