@@ -6,6 +6,7 @@ import { useTypedSelector } from '../../shared/hooks/useTypedSelector';
 import { navigate } from '../../navigation/navigationService';
 import { RouteName } from '../../navigation/types';
 import { onLogOut } from '../../store/auth/action';
+import { fonts } from '../../styles/Fonts';
 
 export const HomeScreen = () => {
   const { t, i18n } = useTranslation();
@@ -26,7 +27,7 @@ export const HomeScreen = () => {
           <Button title="Sign Out" onPress={() => dispatch(onLogOut())} />
         </View>
       )}
-      <Text>{t('home.title')}</Text>
+      <Text style={fonts.display5}>{t('home.title')}</Text>
       <Button
         onPress={() =>
           i18n.changeLanguage(i18n.language === 'fr' ? 'en' : 'fr')
