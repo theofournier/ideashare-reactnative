@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { View, Button, Text } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useTypedSelector } from '../../shared/hooks/useTypedSelector';
 import { navigate } from '../../navigation/navigationService';
 import { RouteName } from '../../navigation/types';
 import { onLogOut } from '../../store/auth/action';

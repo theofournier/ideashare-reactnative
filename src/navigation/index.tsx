@@ -4,7 +4,7 @@ import { MainNavigator, AuthNavigator } from './navigators';
 import React from 'react';
 import { RootStackParamList, RouteName } from './types';
 import { createStackNavigator } from '@react-navigation/stack';
-import { useTypedSelector } from '../hooks/useTypedSelector';
+import { useTypedSelector } from '../shared/hooks/useTypedSelector';
 
 const App = createStackNavigator<RootStackParamList>();
 

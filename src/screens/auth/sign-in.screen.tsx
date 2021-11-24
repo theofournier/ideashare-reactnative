@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, Button, Text, View } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useTypedSelector } from '../../shared/hooks/useTypedSelector';
 import { onLogin } from '../../store/auth/action';
 
 export const SignInScreen = () => {
@@ -18,7 +18,7 @@ export const SignInScreen = () => {
       <Button
         title="Sign In"
         onPress={() =>
-          dispatch(onLogin({ email: 't@t.com', password: '0000001' }))
+          dispatch(onLogin({ email: 't@t.com', password: '000000' }))
         }
       />
       <Text>{error && error.message}</Text>

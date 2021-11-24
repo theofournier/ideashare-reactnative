@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, Button, Text, View } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useTypedSelector } from '../../shared/hooks/useTypedSelector';
 import { onRegister } from '../../store/auth/action';
 
 export const SignUpScreen = () => {
