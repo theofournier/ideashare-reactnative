@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 import { navigationRef } from './navigation/navigationService';
 
+import './intl/i18n';
+
 const App = () => {
   return (
     <Provider store={store}>
