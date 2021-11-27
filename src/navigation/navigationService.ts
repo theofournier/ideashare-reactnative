@@ -16,7 +16,7 @@ export const navigate = (
 ) => {
   if (
     routeName === RouteName.Home ||
-    routeName === RouteName.AddPost ||
+    routeName === RouteName.StartAddPost ||
     routeName === RouteName.Profile
   ) {
     navigationRef.current?.navigate(RouteName.MainNavigator, {
@@ -34,6 +34,14 @@ export const navigate = (
     navigationRef.current?.navigate(RouteName.AuthNavigator, {
       screen: routeName,
       params: params as RootStackParamList[RouteName],
+    });
+  } else if (routeName === RouteName.AddPost) {
+    navigationRef.current?.navigate(RouteName.MainNavigator, {
+      screen: RouteName.AddPostNavigator,
+      params: {
+        screen: routeName,
+        params: params as RootStackParamList[RouteName],
+      },
     });
   } else {
     navigationRef.current?.navigate(

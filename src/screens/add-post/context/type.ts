@@ -1,0 +1,8 @@
+export enum AddPostStep {
+  CATEGORY,
+  INFO,
+  OPTIONALINFO,
+  LABEL,
+  SHAREOPTIONS,
+  RESUME,
+}
