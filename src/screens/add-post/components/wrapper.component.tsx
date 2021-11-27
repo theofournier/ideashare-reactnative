@@ -4,7 +4,7 @@ import { Footer } from './footer.component';
 import { Header } from './header.component';
 
 type Props = {
-  children: React.ReactNode;
+  children: React.ReactElement;
   title?: string;
   description?: string;
   previous?: () => void;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Stepper } from '../components';
 import {
   CategoryContent,
   InfoContent,
@@ -7,31 +8,40 @@ import {
   ResumeContent,
   ShareOptionsContent,
 } from '../contents';
-import { AddPostProvider, AddPostStep, useAddPost } from '../context';
-
-const AddPostContent = () => {
-  const { step } = useAddPost();
-
-  switch (step) {
-    case AddPostStep.CATEGORY:
-      return <CategoryContent />;
-    case AddPostStep.INFO:
-      return <InfoContent />;
-    case AddPostStep.OPTIONALINFO:
-      return <OptionalInfoContent />;
-    case AddPostStep.LABEL:
-      return <LabelContent />;
-    case AddPostStep.SHAREOPTIONS:
-      return <ShareOptionsContent />;
-    case AddPostStep.RESUME:
-      return <ResumeContent />;
-  }
-};
+import { AddPostProvider } from '../context';
+import { StepData, AddPostStep } from '../types';
 
 export const AddPostScreen = () => {
+  const steps: StepData[] = [
+    {
+      step: AddPostStep.CATEGORY,
+      content: <CategoryContent />,
+    },
+    {
+      step: AddPostStep.INFO,
+      content: <InfoContent />,
+    },
+    {
+      step: AddPostStep.OPTIONALINFO,
+      content: <OptionalInfoContent />,
+    },
+    {
+      step: AddPostStep.LABEL,
+      content: <LabelContent />,
+    },
+    {
+      step: AddPostStep.SHAREOPTIONS,
+      content: <ShareOptionsContent />,
+    },
+    {
+      step: AddPostStep.RESUME,
+      content: <ResumeContent />,
+    },
+  ];
+
   return (
     <AddPostProvider>
-      <AddPostContent />
+      <Stepper steps={steps} />
     </AddPostProvider>
   );
 };

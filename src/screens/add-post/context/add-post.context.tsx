@@ -1,24 +1,13 @@
 import React, { createContext, useState } from 'react';
 import { Post } from '../../../shared/models';
-import { AddPostStep } from './type';
 
 export type AddPostContextType = {
-  step: AddPostStep;
-  totalStep: number;
-  stepIndex: number;
-  nextStep: () => void;
-  previousStep: () => void;
   savePost: () => void;
   post: Post;
   setPost: React.Dispatch<React.SetStateAction<Post>>;
 };
 
 export const AddPostContext = createContext<AddPostContextType>({
-  step: AddPostStep.CATEGORY,
-  totalStep: 0,
-  stepIndex: 0,
-  nextStep: () => {},
-  previousStep: () => {},
   savePost: () => {},
   post: {},
   setPost: () => {},
@@ -29,36 +18,6 @@ export default function AddPostProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const steps: AddPostStep[] = [
-    AddPostStep.CATEGORY,
-    AddPostStep.INFO,
-    AddPostStep.OPTIONALINFO,
-    AddPostStep.LABEL,
-    AddPostStep.SHAREOPTIONS,
-    AddPostStep.RESUME,
-  ];
-
-  const [step, setStep] = useState(steps[0]);
-
-  const totalStep = steps.length;
-  const getStep = (index: number) => steps[index];
-  const getIndex = (value: AddPostStep) => steps.indexOf(value);
-  const stepIndex = getIndex(step);
-
-  const nextStep = () => {
-    if (stepIndex === totalStep - 1) {
-      return;
-    }
-    setStep(getStep(stepIndex + 1));
-  };
-
-  const previousStep = () => {
-    if (stepIndex === 0) {
-      return;
-    }
-    setStep(getStep(stepIndex - 1));
-  };
-
   const [post, setPost] = useState<Post>({});
 
   const savePost = () => {
@@ -66,11 +25,6 @@ export default function AddPostProvider({
   };
 
   const contexValue: AddPostContextType = {
-    step,
-    totalStep,
-    stepIndex,
-    nextStep,
-    previousStep,
     savePost,
     post,
     setPost,

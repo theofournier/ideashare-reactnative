@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Text, View } from 'react-native';
-import { useAddPost } from '../context';
+import { useStepper } from '../context';
 
 type Props = {
   previous?: () => void;
@@ -9,8 +9,7 @@ type Props = {
 };
 
 export const Footer = ({ previous, next, save }: Props) => {
-  const { stepIndex, totalStep, nextStep, previousStep, savePost } =
-    useAddPost();
+  const { activeStep, stepCount, nextStep, previousStep } = useStepper();
 
   const onNext = () => {
     next && next();
@@ -22,17 +21,16 @@ export const Footer = ({ previous, next, save }: Props) => {
   };
   const onSave = () => {
     save && save();
-    savePost();
   };
 
   return (
     <View style={{ flexDirection: 'row' }}>
-      {stepIndex > 0 && <Button title="Previous" onPress={onPrevious} />}
+      {activeStep > 0 && <Button title="Previous" onPress={onPrevious} />}
       <Text>
-        {stepIndex + 1} / {totalStep}
+        {activeStep + 1} / {stepCount}
       </Text>
-      {stepIndex < totalStep - 1 && <Button title="Next" onPress={onNext} />}
-      {stepIndex === totalStep - 1 && <Button title="Save" onPress={onSave} />}
+      {activeStep < stepCount - 1 && <Button title="Next" onPress={onNext} />}
+      {activeStep === stepCount - 1 && <Button title="Save" onPress={onSave} />}
     </View>
   );
 };
