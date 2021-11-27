@@ -48,7 +48,7 @@ const createUserWithEmailAndPassword = async ({
       firstname,
       lastname,
       email,
-      photoUrl: firebaseUser.user.photoURL,
+      photoUrl: firebaseUser.user.photoURL ?? undefined,
     },
   };
   console.log(newUser);
@@ -61,7 +61,7 @@ const signOut = async () => {
   await auth().signOut();
 };
 
-export const authService = {
+export default {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,

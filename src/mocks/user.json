@@ -4,6 +4,6 @@
     "firstname": "Test",
     "lastname": "Doe",
     "email": "t@t.com",
-    "photoUrl": null
+    "photoUrl": ""
   }
 }
