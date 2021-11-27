@@ -1,5 +1,15 @@
 {
   "home": {
     "title": "Home"
+  },
+  "addPost": {
+    "category": {
+      "title": "Category",
+      "description": "Category description",
+      "ideaTitle": "Idea",
+      "ideaDescription": "Idea description",
+      "issueTitle": "Issue",
+      "issueDescription": "Issue description"
+    }
   }
 }

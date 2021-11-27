@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { Post } from '../../../shared/models';
 import { AddPostStep } from './type';
 
 export type AddPostContextType = {
@@ -8,6 +9,8 @@ export type AddPostContextType = {
   nextStep: () => void;
   previousStep: () => void;
   savePost: () => void;
+  post: Post;
+  setPost: React.Dispatch<React.SetStateAction<Post>>;
 };
 
 export const AddPostContext = createContext<AddPostContextType>({
@@ -17,6 +20,8 @@ export const AddPostContext = createContext<AddPostContextType>({
   nextStep: () => {},
   previousStep: () => {},
   savePost: () => {},
+  post: {},
+  setPost: () => {},
 });
 
 export default function AddPostProvider({
@@ -54,6 +59,8 @@ export default function AddPostProvider({
     setStep(getStep(stepIndex - 1));
   };
 
+  const [post, setPost] = useState<Post>({});
+
   const savePost = () => {
     console.log('SAVE POST');
   };
@@ -65,6 +72,8 @@ export default function AddPostProvider({
     nextStep,
     previousStep,
     savePost,
+    post,
+    setPost,
   };
 
   return (
