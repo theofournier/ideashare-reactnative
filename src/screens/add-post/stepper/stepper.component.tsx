@@ -1,5 +1,5 @@
 import React from 'react';
-import { StepperProvider, useStepper } from '../context';
+import { useStepper, StepperProvider } from './context';
 import { StepData } from '../types';
 
 type Props = {

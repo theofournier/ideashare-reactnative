@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Text, View } from 'react-native';
-import { useStepper } from '../context';
+import { useStepper } from './context';
 
 type Props = {
   previous?: () => void;

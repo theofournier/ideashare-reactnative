@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stepper } from '../components';
+import { Stepper } from '../stepper';
 import {
   CategoryContent,
   InfoContent,

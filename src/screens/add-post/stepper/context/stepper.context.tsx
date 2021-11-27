@@ -1,5 +1,5 @@
 import React, { createContext, ReactElement, useEffect, useState } from 'react';
-import { AddPostStep, StepData } from '../types';
+import { AddPostStep, StepData } from '../../types';
 
 export type StepperContextType = {
   activeStep: number;

@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { PostType } from '../../../shared/constants';
-import { Wrapper } from '../components';
+import { Wrapper } from '../stepper';
 import { useAddPost } from '../context';
 
 export default function CategoryContent() {

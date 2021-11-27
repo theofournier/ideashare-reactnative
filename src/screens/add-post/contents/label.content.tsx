@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { Wrapper } from '../components';
+import { Wrapper } from '../stepper';
 
 export default function LabelContent() {
   return (
