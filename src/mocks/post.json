@@ -1,0 +1,40 @@
+{
+  "id": "post1",
+  "category": "idea",
+  "owner": {
+    "id": "DRc3QOdezuUSxYxQEVPOj1Nq7aH2",
+    "info": {
+      "firstname": "Test",
+      "lastname": "Doe",
+      "email": "t@t.com",
+      "photoUrl": ""
+    }
+  },
+  "info": {
+    "title": "Post title",
+    "description": "Post description",
+    "images": [],
+    "urlLinks": [],
+    "language": "en"
+  },
+  "labels": [
+    {
+      "id": "label1",
+      "title": "Label title",
+      "icon": "icon",
+      "subLabels": []
+    }
+  ],
+  "shareOptions": {
+    "privacy": "public",
+    "anonymous": false,
+    "like": "everyone",
+    "comment": "follow",
+    "createComment": "approval"
+  },
+  "docTime": {
+    "deleted": false,
+    "createdAt": "2021-11-26T14:45:45-05:00",
+    "updateAt": "2021-11-27T09:05:45-05:00"
+  }
+}
